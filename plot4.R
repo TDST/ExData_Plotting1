@@ -45,7 +45,7 @@ par( mfrow = c( 2, 2 ) )
 plot( date_time, as.numeric( df$Global_active_power ), type="l", xlab="", ylab="Global Active Power", cex=0.2 )
 plot( date_time, as.numeric( df$Voltage), type="l", xlab="datetime", ylab="Voltage" )
 
-plot( date_time, as.numeric( df$Sub_metering_1 ), type="l", ylab="Energy Submetering", xlab="" )
+plot( date_time, as.numeric( df$Sub_metering_1 ), type="l", ylab="Energy sub metering", xlab="" )
 lines( date_time, as.numeric( df$Sub_metering_2 ), type="l", col="red" )
 lines( date_time, as.numeric( df$Sub_metering_3 ), type="l", col="blue" )
 
