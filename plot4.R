@@ -41,13 +41,17 @@ date_time <- strptime( paste( df$Date, df$Time, sep=" " ), "%d/%m/%Y %H:%M:%S" )
 # Open the output file, set the plot size, adding sub-metering lines and a legend, and write the plot to the file
 png( "plot4.png", width=480, height=480 )
 par( mfrow = c( 2, 2 ) )
+
 plot( date_time, as.numeric( df$Global_active_power ), type="l", xlab="", ylab="Global Active Power", cex=0.2 )
 plot( date_time, as.numeric( df$Voltage), type="l", xlab="datetime", ylab="Voltage" )
+
 plot( date_time, as.numeric( df$Sub_metering_1 ), type="l", ylab="Energy Submetering", xlab="" )
 lines( date_time, as.numeric( df$Sub_metering_2 ), type="l", col="red" )
 lines( date_time, as.numeric( df$Sub_metering_3 ), type="l", col="blue" )
-legend( "topright", c( "Sub_metering_1", "Sub_metering_2", "Sub_metering_3" ), lty=, lwd=2.5, col=c( "black", "red", "blue" ), bty="o" )
-plot( date_time, as.numeric( df$Global_reactive_power ), type="l", xlab="datetime", ylab="Global_reactive_power" )
+
+legend( "topright", c( "Sub_metering_1", "Sub_metering_2", "Sub_metering_3" ), box.lwd=0, lwd=2.5, col=c( "black", "red", "blue" ), bty="o" )
+
+plot( date_time, as.numeric( df$Global_reactive_power ), type="l", xlab="datetime", ylab="Global _reactive_power" )
 
 # Close the output file
 dev.off( )
